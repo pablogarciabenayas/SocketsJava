@@ -43,7 +43,7 @@ public class HebraManejadora extends Thread {
              */
             while (true) {
                 String fraseCliente = streamIn.readLine();
-                streamOut.writeBytes("cliente " + idClient + ": " + fraseCliente);
+                streamOut.writeBytes("cliente " + idClient + ": " + fraseCliente + '\n');
                 streamOut.flush();
             }
             // Cerramos la conexion

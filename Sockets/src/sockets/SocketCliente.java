@@ -51,22 +51,24 @@ public class SocketCliente {
         BufferedReader consolaIn;
         String mensaje;
             //mensaje de teclado
+        char c = 0;
         for (int i = 0; i < 10; i++) {
-            mensaje = "Cliente dice: "+ i ;
+            mensaje = "Cliente dice: "+ i +'\n';
             System.out.println(mensaje);
             streamOut.writeBytes(mensaje);
             streamOut.flush();
 
-            //echo de mensaje devuevlto del servidor
-            String echo = streamIn.readLine();
+            String echo;
+            echo = streamIn.readLine();
+            
             System.out.println("echo "+ echo);
 
         }
 
-        // Cerramos la conexion
-        //streamIn.close();
-        //streamOut.close();
-        //socket.close();
+        //Cerramos la conexion
+        streamIn.close();
+        streamOut.close();
+        socket.close();
 
     }
 
